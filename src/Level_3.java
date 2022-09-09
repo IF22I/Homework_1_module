@@ -27,21 +27,17 @@ public class Level_3 {
         }
     }
 
-    public static int[] prisonGuardProblem(int guard, int gate) {
+    public static Boolean[] prisonGuardProblem(int guard, int gate) {
 
-        int[] prison = new int[gate];
+        Boolean[] prison = new Boolean[gate];
 
         for (int i = 0; i < gate; i++) {
-            prison[i] = 0;
+            prison[i] = false;
         }
 
         for (int j = 1; j <=gate; j++) {
             for (int i = 1; i <=guard; i++) {
-                if ( i % j == 0) {
-                    prison[i - 1] = 1;
-                } else if ( i % j != 0) {
-                    prison[i - 1] = 0;
-                }
+                prison[i-1] = (i % j == 0) != prison[i - 1];
             }
         }
 
