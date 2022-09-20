@@ -37,7 +37,7 @@ public class Level_3 {
 
         for (int j = 1; j <=gate; j++) {
             for (int i = 1; i <=guard; i++) {
-                prison[i-1] = (i % j == 0) != prison[i - 1];
+                prison[i - 1] = ((i % j) == 0) != prison[i - 1];
             }
         }
 
